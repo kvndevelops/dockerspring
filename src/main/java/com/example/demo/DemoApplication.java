@@ -11,8 +11,14 @@ public class DemoApplication {
     public static void main(String[] args) {
       SpringApplication.run(DemoApplication.class, args);
     }
+
+    @GetMapping("/")
+    public String homepage() {
+      return "Homepage";
+    }
+
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-      return "Hey there! " + name;
+      return "Well, hello there " + name;
     }
 }
